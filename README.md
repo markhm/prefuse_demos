@@ -16,13 +16,14 @@ Note that this is a quick and dirty rework of the standard TreeView demo to easi
 5. Click the button, which sets the Fisheye filter depth from 1 to 0, omitting any nodes that are not directly between one of the search results and the root.
 6. Observe that some of the edges that were visible earlier are missing now (!).
 
-Children back to their parents:
+Missing are the following edge visualisations (children should link back to their parents):
     Things -> Categories
     Organisations -> Specific People
     Marine -> Placental
     Generic -> People
 
-See image (large):
-    https://i.imgur.com/UIXXXvb.png
+See images (large):
+https://i.imgur.com/1gdm7N8.png (Fisheye depth 1)
+https://i.imgur.com/UIXXXvb.png (Fisheye depth 0 with bug)
 
 Comments are appreciated.
