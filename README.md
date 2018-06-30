@@ -22,4 +22,7 @@ Children back to their parents:
     Marine -> Placental
     Generic -> People
 
+See image (large):
+    https://i.imgur.com/UIXXXvb.png
+
 Comments are appreciated.
