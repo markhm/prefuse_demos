@@ -17,13 +17,15 @@ Note that this is a quick and dirty rework of the standard TreeView demo to easi
 6. Observe that some of the edges that were visible earlier are missing now (!).
 
 Missing are the following edge visualisations (children should link back to their parents):
-    Things -> Categories
-    Organisations -> Specific People
-    Marine -> Placental
-    Generic -> People
+    Things -> Categories,
+    Organisations -> Specific People,
+    Marine -> Placental,
+    Generic -> People.
 
 See images (large):
+
 https://i.imgur.com/1gdm7N8.png (Fisheye depth 1)
+
 https://i.imgur.com/UIXXXvb.png (Fisheye depth 0 with bug)
 
 Comments are appreciated.
