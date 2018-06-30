@@ -3,8 +3,7 @@ Demos and variations based on Prefuse.
 
 ## FisheyeFilter bug in TreeView
 ### Introduction
-This example shows a bug in/related to Prefuse's FisheyeFilter algorithm, which causes some edges at fisheye depth level 0 not to be drawn.
-Note that this is a quick and dirty rework of the standard TreeView demo to easily show the problem.
+This example shows a bug in/related to Prefuse's FisheyeFilter algorithm, which causes some edges at fisheye depth level 0 not to be drawn. Note that this is a quick and dirty rework of the standard TreeView demo to easily show the problem.
 
     'prefuse.demos.bugs.fisheye.TreeViewFisheyeBug'
 
@@ -26,6 +25,6 @@ See images (large):
 
 https://i.imgur.com/1gdm7N8.png (Fisheye depth 1)
 
-https://i.imgur.com/UIXXXvb.png (Fisheye depth 0 with bug)
+https://i.imgur.com/UIXXXvb.png (Fisheye depth 0, showing missing edges)
 
 Comments are appreciated.
