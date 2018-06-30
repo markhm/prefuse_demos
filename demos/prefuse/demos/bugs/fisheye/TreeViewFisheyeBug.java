@@ -1,4 +1,4 @@
-package prefuse.demos;
+package prefuse.demos.bugs.fisheye;
 
 import prefuse.Constants;
 import prefuse.Display;
@@ -45,12 +45,12 @@ import java.awt.geom.Point2D;
 
 
 /**
- * Demonstration of a node-link tree viewer
+ * Demonstration of Fisheye filter bug, based on the standard TreeViewFisheyeBug demo, a node-link tree viewer.
  *
  * @author <a href="http://jheer.org">jeffrey heer</a>
  * @version 1.0
  */
-public class TreeView extends Display
+public class TreeViewFisheyeBug extends Display
 {
 
     public static final String TREE_CHI = "/chi-ontology.xml.gz";
@@ -67,7 +67,7 @@ public class TreeView extends Display
     private String m_label = "label";
     private int m_orientation = Constants.ORIENT_LEFT_RIGHT;
 
-    public TreeView(String file, String l)
+    public TreeViewFisheyeBug(String file, String l)
     {
         super(new Visualization());
 
@@ -272,7 +272,7 @@ public class TreeView extends Display
 
     public static void main(String argv[])
     {
-        new TreeView(TREE_CHI, "name");
+        new TreeViewFisheyeBug(TREE_CHI, "name");
     }
 
     private Tree buildTree(String datafile)
@@ -289,13 +289,13 @@ public class TreeView extends Display
         return t;
     }
 
-    public JComponent demo(final String label, TreeView tv)
+    public JComponent demo(final String label, TreeViewFisheyeBug tv)
     {
         Color BACKGROUND = Color.WHITE;
         Color FOREGROUND = Color.BLACK;
 
         // create a new treemap
-        final TreeView tview = tv;
+        final TreeViewFisheyeBug tview = tv;
         tview.setBackground(BACKGROUND);
         tview.setForeground(FOREGROUND);
 
@@ -485,4 +485,4 @@ public class TreeView extends Display
 
     } // end of inner class TreeMapColorAction
 
-} // end of class TreeMap
+} // end of class TreeViewFisheyeBug
