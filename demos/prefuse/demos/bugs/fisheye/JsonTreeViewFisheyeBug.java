@@ -35,6 +35,8 @@ import prefuse.util.ui.JSearchPanel;
 import prefuse.visual.VisualItem;
 import prefuse.visual.expression.InGroupPredicate;
 import prefuse.visual.sort.TreeDepthItemSorter;
+import treebrowser.data.tree.TreeSource;
+import treebrowser.data.tree.filesystem.JSONTreeSource;
 
 import javax.swing.*;
 import java.awt.*;
@@ -51,10 +53,10 @@ import java.awt.geom.Point2D;
  * @author <a href="http://jheer.org">jeffrey heer</a>
  * @version 1.0
  */
-public class TreeViewFisheyeBug extends Display
+public class JsonTreeViewFisheyeBug extends Display
 {
 
-    public static final String TREE_CHI = "/chi-ontology.xml.gz";
+    // public static final String TREE_CHI = "/chi-ontology.xml.gz";
 
     private static final String tree = "tree";
     private static final String treeNodes = "tree.nodes";
@@ -68,11 +70,11 @@ public class TreeViewFisheyeBug extends Display
     private String m_label = "label";
     private int m_orientation = Constants.ORIENT_LEFT_RIGHT;
 
-    public TreeViewFisheyeBug(String file, String l)
+    public JsonTreeViewFisheyeBug(String file, String l)
     {
         super(new Visualization());
 
-        String infile = TREE_CHI;
+        // String infile = TREE_CHI;
         String label = "name";
 //        if (argv.length > 1)
 //        {
@@ -81,7 +83,10 @@ public class TreeViewFisheyeBug extends Display
 //        }
         // JComponent treeview = demo(infile, label);
 
-        Tree t = buildTree(infile);
+        // Tree t = buildTree(infile);
+
+        Tree t = loadTree();
+
         m_vis.add(tree, t);
 
         m_label = label;
@@ -209,12 +214,20 @@ public class TreeViewFisheyeBug extends Display
             }
         });
 
-        JFrame frame = new JFrame("p r e f u s e  |  t r e e v i e w");
+        JFrame frame = new JFrame("p r e f u s e  |  fisheyebug JSON");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setContentPane(demo(label, this));
         frame.pack();
         frame.setVisible(true);
 
+    }
+
+    private Tree loadTree()
+    {
+        TreeSource source = new JSONTreeSource("/Users/mark/git/prefuse_demos/demos/flare.json");
+        source.parse();
+
+        return source.getTree();
     }
 
     // ------------------------------------------------------------------------
@@ -273,7 +286,7 @@ public class TreeViewFisheyeBug extends Display
 
     public static void main(String argv[])
     {
-        new TreeViewFisheyeBug(TREE_CHI, "name");
+        new JsonTreeViewFisheyeBug(null, "name");
     }
 
     private Tree buildTree(String datafile)
@@ -290,13 +303,13 @@ public class TreeViewFisheyeBug extends Display
         return t;
     }
 
-    public JComponent demo(final String label, TreeViewFisheyeBug tv)
+    public JComponent demo(final String label, JsonTreeViewFisheyeBug tv)
     {
         Color BACKGROUND = Color.WHITE;
         Color FOREGROUND = Color.BLACK;
 
         // create a new treemap
-        final TreeViewFisheyeBug tview = tv;
+        final JsonTreeViewFisheyeBug tview = tv;
         tview.setBackground(BACKGROUND);
         tview.setForeground(FOREGROUND);
 
